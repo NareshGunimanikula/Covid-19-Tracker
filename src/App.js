@@ -72,7 +72,7 @@ function App() {
           ? setMapCenter([34.80746, -40.4796])
           : setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         //setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-        setMapZoom(3);
+        setMapZoom(4);
       });
   };
 
