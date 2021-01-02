@@ -14,7 +14,7 @@ const options = {
   maintainAspectRatio: false,
   tooltips: {
     mode: "index",
-    interesect: false,
+    intersect: false,
     callbacks: {
       label: function (tooltipItem, data) {
         return numeral(tooltipItem.value).format("+0,0");
@@ -47,12 +47,12 @@ const options = {
 };
 
 const buildChartData = (data, casesType) => {
-  const chartData = [];
+  let chartData = [];
   let lastDataPoint;
 
   for (let date in data.cases) {
     if (lastDataPoint) {
-      const newDataPoint = {
+      let newDataPoint = {
         x: date,
         y: data[casesType][date] - lastDataPoint,
       };
@@ -63,7 +63,7 @@ const buildChartData = (data, casesType) => {
   return chartData;
 };
 
-function LineGraph({ casesType = "cases" }) {
+function LineGraph({ casesType }) {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -82,7 +82,6 @@ function LineGraph({ casesType = "cases" }) {
 
   return (
     <div>
-      <h1>im a graph</h1>
       {data?.length > 0 && (
         <Line
           options={options}

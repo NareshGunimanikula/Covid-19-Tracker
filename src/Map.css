@@ -9,6 +9,7 @@
 
 .map .leaflet-container {
   height: 100%;
+  border-radius: 12px;
 }
 
 .info_flag img {
@@ -16,10 +17,14 @@
   border-radius: 5px;
 }
 
-.name {
+.info-name {
   font-size: 20px;
   font-weight: bold;
   color: #555;
+}
+
+.info_container {
+  width: 150px;
 }
 
 .info_flag {
@@ -34,8 +39,4 @@
 .info-deaths {
   font-size: 16px;
   margin-top: 5px;
-}
-
-.info_container {
-  width: 150px;
 }
